@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Protectores";
+}
+
+<div class="jumbotron">
+    <h1>¿Necesitas ayudas?</h1>
+    <h2>Ingresa tu dirección</h2>
+    <form>
+        <div class="input-group">
+            <input type="text" class="form-control" placeholder="ingresa tu dirección" aria-describedby="basic addon2" style="width:100%">
+            <div class="input-group-btn" role="group">
+                <button type="button" class="btn btn-default">Buscar</button>
+                <button type="button" class="btn btn-danger" onclick="autoDetectLocation()">Auto-detectar</button>
+            </div>
+        </div>
+    </form>
+</div>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript">
+    function autoDetectLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (p) {
+            var LatLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
+            var mapOptions = {
+                center: LatLng,
+                zoom: 13,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("dvMap"), mapOptions);
+            var marker = new google.maps.Marker({
+                position: LatLng,
+                map: map,
+                title: "<div style = 'height:60px;width:200px'><b>Your location:</b><br />Latitude: " + p.coords.latitude + "<br />Longitude: " + p.coords.longitude
+            });
+            google.maps.event.addListener(marker, "click", function (e) {
+                var infoWindow = new google.maps.InfoWindow();
+                infoWindow.setContent(marker.title);
+                infoWindow.open(map, marker);
+            });
+        });
+    } else {
+        alert('Geo Location feature is not supported in this browser.');
+    }
+    }
+</script>
+
