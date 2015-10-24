@@ -18,7 +18,7 @@ namespace Protectores.Models
         public string Password { get; set; }
         public string Telefono { get; set; }
         public string Direccion { get; set; }
-        public Perfil
-        
+        public ICollection<Perfil> Perfil { get; set; }
+
     }
 }
