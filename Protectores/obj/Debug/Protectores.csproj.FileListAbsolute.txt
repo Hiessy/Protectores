@@ -78,3 +78,7 @@ C:\projects\Protectores\Protectores\bin\Newtonsoft.Json.xml
 C:\projects\Protectores\Protectores\obj\Debug\Protectores.csprojResolveAssemblyReference.cache
 C:\projects\Protectores\Protectores\obj\Debug\Protectores.dll
 C:\projects\Protectores\Protectores\obj\Debug\Protectores.pdb
+C:\projects\Protectores\Protectores\bin\EntityFramework.dll
+C:\projects\Protectores\Protectores\bin\EntityFramework.SqlServer.dll
+C:\projects\Protectores\Protectores\bin\EntityFramework.xml
+C:\projects\Protectores\Protectores\bin\EntityFramework.SqlServer.xml
