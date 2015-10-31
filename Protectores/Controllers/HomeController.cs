@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Protectores.ViewModels;
 
 namespace Protectores.Controllers
 {
@@ -28,5 +29,6 @@ namespace Protectores.Controllers
 
             return View();
         }
+
     }
 }

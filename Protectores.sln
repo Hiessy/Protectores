@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Express 14 for Web
+# Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Protectores", "Protectores\Protectores.csproj", "{8BF26B36-F36F-439F-B947-5FCFE7C677BA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleEntities", "Libreria\AddressTranslation\GoogleEntities\GoogleEntities.csproj", "{B3B94C19-BF69-48CE-9716-ADA437F83BA6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleApiRequest", "Libreria\AddressTranslation\GoogleApiRequest\GoogleApiRequest.csproj", "{D245617C-C32D-406E-8CF9-6250C07996B5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{8BF26B36-F36F-439F-B947-5FCFE7C677BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BF26B36-F36F-439F-B947-5FCFE7C677BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BF26B36-F36F-439F-B947-5FCFE7C677BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3B94C19-BF69-48CE-9716-ADA437F83BA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3B94C19-BF69-48CE-9716-ADA437F83BA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3B94C19-BF69-48CE-9716-ADA437F83BA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3B94C19-BF69-48CE-9716-ADA437F83BA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D245617C-C32D-406E-8CF9-6250C07996B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D245617C-C32D-406E-8CF9-6250C07996B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D245617C-C32D-406E-8CF9-6250C07996B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D245617C-C32D-406E-8CF9-6250C07996B5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

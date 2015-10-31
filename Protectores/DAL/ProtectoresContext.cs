@@ -12,10 +12,13 @@ namespace Protectores.DAL
         {            
         }
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Direccion> Direcciones { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
+        public System.Data.Entity.DbSet<Protectores.ViewModels.RegistracionViewModel> RegistracionViewModels { get; set; }
     }
 }
