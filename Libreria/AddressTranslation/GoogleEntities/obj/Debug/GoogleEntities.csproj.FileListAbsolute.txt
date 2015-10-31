@@ -1,0 +1,4 @@
+C:\projects\AddressTranslation\GoogleEntities\bin\Debug\GoogleEntities.dll
+C:\projects\AddressTranslation\GoogleEntities\bin\Debug\GoogleEntities.pdb
+C:\projects\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.dll
+C:\projects\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.pdb
