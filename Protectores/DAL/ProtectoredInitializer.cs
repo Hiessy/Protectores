@@ -18,10 +18,10 @@ namespace Protectores.DAL
             };
             usuarios.ForEach(s => context.Usuarios.Add(s));
 
-            var direcciones = new List<Direccion>
+            var direcciones = new List<Contacto>
             {
-                new Direccion { Latitud = 140.12345, Longitud = 53.12345 },
-                new Direccion { Latitud = 53.12345, Longitud = 140.12345 },
+                new Contacto { Latitud = 140.12345, Longitud = 53.12345 },
+                new Contacto { Latitud = 53.12345, Longitud = 140.12345 },
             };
             direcciones.ForEach(s => context.Direcciones.Add(s));
 

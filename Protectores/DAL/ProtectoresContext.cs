@@ -12,7 +12,7 @@ namespace Protectores.DAL
         {            
         }
         public DbSet<Usuario> Usuarios { get; set; }
-        public DbSet<Direccion> Direcciones { get; set; }
+        public DbSet<Contacto> Direcciones { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

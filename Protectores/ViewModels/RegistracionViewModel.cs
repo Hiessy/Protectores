@@ -10,6 +10,6 @@ namespace Protectores.ViewModels
     {
         public int Id { get; set; }
         public Usuario Usuario { get; set; }
-        public Direccion Direccion { get; set; }
+        public Contacto Direccion { get; set; }
     }
 }
