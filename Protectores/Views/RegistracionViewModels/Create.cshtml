@@ -33,14 +33,6 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Usuario.Apellido, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Usuario.Apellido, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Usuario.Apellido, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.Usuario.Correo, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Usuario.Correo, new { htmlAttributes = new { @class = "form-control" } })
@@ -58,54 +50,52 @@
 
         <div class="form-group">
             @Html.LabelFor(model => model.Usuario.Perfil, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            <div class="col-md-10" onchange="verAttrPerfil();">
                 @Html.EnumDropDownListFor(model => model.Usuario.Perfil, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Usuario.Perfil, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        @if (true) {
-            <div class="form-group">
-                @Html.LabelFor(model => model.Usuario.Organizacion, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Usuario.Organizacion, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Usuario.Organizacion, "", new { @class = "text-danger" })
-                </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Usuario.Organizacion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Usuario.Organizacion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Usuario.Organizacion, "", new { @class = "text-danger" })
             </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Usuario.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Usuario.Direccion, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Usuario.Direccion, "", new { @class = "text-danger" })
-                </div>
-            </div>
-
-            <div class="form-group">
-                @Html.LabelFor(model => model.Usuario.Telefono, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    @Html.EditorFor(model => model.Usuario.Telefono, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Usuario.Telefono, "", new { @class = "text-danger" })
-                </div>
-            </div>
-        }
+        </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Usuario.Direccion, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Usuario.Direccion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Usuario.Direccion, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Usuario.Telefono, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Usuario.Telefono, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Usuario.Telefono, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!-- Testeo de la api de google, todavia no implementado-->
+        <div class="form-group" style="display:none">
             @Html.LabelFor(model => model.Direccion.Latitud, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Direccion.Latitud, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Direccion.Latitud, "", new { @class = "text-danger" })
             </div>
         </div>
-
-        <div class="form-group">
+        
+        <div class="form-group" style="display:none">
             @Html.LabelFor(model => model.Direccion.Longitud, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Direccion.Longitud, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Direccion.Longitud, "", new { @class = "text-danger" })
             </div>
         </div>
-        
+        <!-- Fin del testeo de la api de google, todavia no implementado-->
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -114,6 +104,11 @@
     </div>
 }
 
+@*Script de Autocompletar*@
+<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initMap" async defer></script>
+<script src="~/Scripts/autocompletar.js"></script>
+
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script src="@Url.Content("~/Scripts/Create.js")"></script>
 }
