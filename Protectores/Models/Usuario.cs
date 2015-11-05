@@ -16,12 +16,13 @@ namespace Protectores.Models
         public int UsuarioID { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
-        public string Organizacion { get; set; }
-        public string Direccion { get; set; }
         [DataType(DataType.EmailAddress)]
         public string Correo { get; set; }
         public string Password { get; set; }
-        public string Telefono { get; set; }
         public Perfil Perfil { get; set; }
+
+        [ForeignKey("Contacto")]
+        public int ContactoId { get; set; }
+        public virtual Contacto Contacto { get; set; }
     }
 }

@@ -2,3 +2,7 @@ C:\projects\AddressTranslation\GoogleEntities\bin\Debug\GoogleEntities.dll
 C:\projects\AddressTranslation\GoogleEntities\bin\Debug\GoogleEntities.pdb
 C:\projects\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.dll
 C:\projects\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.pdb
+C:\proyectos\Protectores\Libreria\AddressTranslation\GoogleEntities\bin\Debug\GoogleEntities.dll
+C:\proyectos\Protectores\Libreria\AddressTranslation\GoogleEntities\bin\Debug\GoogleEntities.pdb
+C:\proyectos\Protectores\Libreria\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.dll
+C:\proyectos\Protectores\Libreria\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.pdb

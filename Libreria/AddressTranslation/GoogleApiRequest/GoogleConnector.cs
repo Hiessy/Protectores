@@ -13,8 +13,9 @@ namespace GoogleApiRequest
         public static string CreateGeocodeRequest(string addressNumber, string streetName, string cityName, string countryName)
         {
             string baseUrl = "geocode/json?";
-            string address = "address=" + addressNumber + "+" + streetName + ",+" + "cityName" + ",+" + countryName;
+            string address = "address=" + addressNumber + "+" + streetName + ",+" + cityName + ",+" + countryName;
             string requestUrl = GOOGLE_MAP_API_BASEURL + baseUrl + address;
+            Console.WriteLine(requestUrl);
             return (requestUrl);
         }
 
@@ -33,8 +34,7 @@ namespace GoogleApiRequest
                         response.StatusDescription));
                     DataContractJsonSerializer jsonSerializer = new DataContractJsonSerializer(typeof(GeocodeResponse));
                     object objResponse = jsonSerializer.ReadObject(response.GetResponseStream());
-                    GeocodeResponse jsonResponse
-                    = objResponse as GeocodeResponse;
+                    GeocodeResponse jsonResponse = objResponse as GeocodeResponse;
                     return jsonResponse;
                 }
             }

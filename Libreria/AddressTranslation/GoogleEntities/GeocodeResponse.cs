@@ -64,9 +64,9 @@ namespace GoogleEntities
     [DataContract]
     public class Location
     {
-        [DataMember(Name = "northeast")]
-        public long lat { get; set; }
-        [DataMember(Name = "southwest")]
-        public long lng { get; set; }
+        [DataMember(Name = "lat")]
+        public double lat { get; set; }
+        [DataMember(Name = "lng")]
+        public double lng { get; set; }
     }
 }

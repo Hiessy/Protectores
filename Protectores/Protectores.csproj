@@ -137,10 +137,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Direccion.cs" />
+    <Compile Include="Models\AdopcionAnimal.cs" />
+    <Compile Include="Models\Contacto.cs" />
+    <Compile Include="Models\TipoAnimal.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModels\RegistracionViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -149,9 +150,13 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\autocompletar.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\create.js" />
+    <Content Include="Scripts\google-api.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -185,6 +190,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -193,6 +199,16 @@
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libreria\AddressTranslation\GoogleApiRequest\GoogleApiRequest.csproj">
+      <Project>{d245617c-c32d-406e-8cf9-6250c07996b5}</Project>
+      <Name>GoogleApiRequest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libreria\AddressTranslation\GoogleEntities\GoogleEntities.csproj">
+      <Project>{b3b94c19-bf69-48ce-9716-ada437f83ba6}</Project>
+      <Name>GoogleEntities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
