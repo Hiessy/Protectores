@@ -8,6 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using Protectores.DAL;
 using Protectores.Models;
+using GoogleEntities;
+using GoogleApiRequest;
 
 namespace Protectores.Controllers
 {
@@ -49,10 +51,15 @@ namespace Protectores.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Usuario usuario2)
         {
-                db.Contacto.Add(usuario2.Contacto);
-                db.Usuarios.Add(usuario2);
-                db.SaveChanges();
-                return RedirectToAction("Index", "Home");
+            GeocodeResponse geoPosicion = GoogleConnector.MakeRequest(usuario2.Contacto.AddressNumber, usuario2.Contacto.StreetName, usuario2.Contacto.CityName, usuario2.Contacto.CountryName);
+            Console.WriteLine(geoPosicion);
+            usuario2.Contacto.Latitud = geoPosicion.results[0].geometry.location.lat;
+            usuario2.Contacto.Longitud = geoPosicion.results[0].geometry.location.lng;
+            
+            db.Contacto.Add(usuario2.Contacto);
+            db.Usuarios.Add(usuario2);
+            db.SaveChanges();
+            return RedirectToAction("Index", "Home");
         }
         // GET: RegistracionViewModels/Edit/5
         public ActionResult Edit(int? id)

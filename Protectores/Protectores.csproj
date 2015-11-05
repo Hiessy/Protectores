@@ -200,6 +200,16 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Libreria\AddressTranslation\GoogleApiRequest\GoogleApiRequest.csproj">
+      <Project>{d245617c-c32d-406e-8cf9-6250c07996b5}</Project>
+      <Name>GoogleApiRequest</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Libreria\AddressTranslation\GoogleEntities\GoogleEntities.csproj">
+      <Project>{b3b94c19-bf69-48ce-9716-ada437f83ba6}</Project>
+      <Name>GoogleEntities</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

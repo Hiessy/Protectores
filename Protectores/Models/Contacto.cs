@@ -15,7 +15,10 @@ namespace Protectores.Models
         public double Latitud { get; set; }
         public double Longitud { get; set; }
         public string Organizacion { get; set; }
-        public string Direccion { get; set; }
+        public string AddressNumber { get; set; }
+        public string StreetName { get; set; }
+        public string CityName { get; set; }
+        public string CountryName { get; set; }
         public string Telefono { get; set; }
 
     }
