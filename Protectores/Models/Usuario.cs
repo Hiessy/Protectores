@@ -20,5 +20,9 @@ namespace Protectores.Models
         public string Correo { get; set; }
         public string Password { get; set; }
         public Perfil Perfil { get; set; }
+
+        [ForeignKey("Contacto")]
+        public int ContactoId { get; set; }
+        public virtual Contacto Contacto { get; set; }
     }
 }

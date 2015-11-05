@@ -7,7 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Protectores.DAL;
-using Protectores.ViewModels;
+using Protectores.Models;
 
 namespace Protectores.Controllers
 {
@@ -18,7 +18,7 @@ namespace Protectores.Controllers
         // GET: RegistracionViewModels
         public ActionResult Index()
         {
-            return View(db.RegistracionViewModels.ToList());
+            return View();
         }
 
         // GET: RegistracionViewModels/Details/5
@@ -28,12 +28,12 @@ namespace Protectores.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            RegistracionViewModel registracionViewModel = db.RegistracionViewModels.Find(id);
+        /*    RegistracionViewModel registracionViewModel = db.RegistracionViewModels.Find(id);
             if (registracionViewModel == null)
             {
                 return HttpNotFound();
-            }
-            return View(registracionViewModel);
+            }*/
+            return View();
         }
 
         // GET: RegistracionViewModels/Create
@@ -47,18 +47,13 @@ namespace Protectores.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id")] RegistracionViewModel registracionViewModel)
+        public ActionResult Create(Usuario usuario2)
         {
-            if (ModelState.IsValid)
-            {
-                db.RegistracionViewModels.Add(registracionViewModel);
+                db.Contacto.Add(usuario2.Contacto);
+                db.Usuarios.Add(usuario2);
                 db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
-            return View(registracionViewModel);
+                return RedirectToAction("Index", "Home");
         }
-
         // GET: RegistracionViewModels/Edit/5
         public ActionResult Edit(int? id)
         {
@@ -66,12 +61,12 @@ namespace Protectores.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            RegistracionViewModel registracionViewModel = db.RegistracionViewModels.Find(id);
+        /*    RegistracionViewModel registracionViewModel = db.RegistracionViewModels.Find(id);
             if (registracionViewModel == null)
             {
                 return HttpNotFound();
-            }
-            return View(registracionViewModel);
+            }*/
+            return View();
         }
 
         // POST: RegistracionViewModels/Edit/5
@@ -79,15 +74,15 @@ namespace Protectores.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id")] RegistracionViewModel registracionViewModel)
+        public ActionResult Edit()
         {
             if (ModelState.IsValid)
             {
-                db.Entry(registracionViewModel).State = EntityState.Modified;
+           /*     db.Entry().State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Index");*/
             }
-            return View(registracionViewModel);
+            return View();
         }
 
         // GET: RegistracionViewModels/Delete/5
@@ -97,12 +92,12 @@ namespace Protectores.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            RegistracionViewModel registracionViewModel = db.RegistracionViewModels.Find(id);
+      /*      RegistracionViewModel registracionViewModel = db.RegistracionViewModels.Find(id);
             if (registracionViewModel == null)
             {
                 return HttpNotFound();
-            }
-            return View(registracionViewModel);
+            }*/
+            return View();
         }
 
         // POST: RegistracionViewModels/Delete/5
@@ -110,9 +105,9 @@ namespace Protectores.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            RegistracionViewModel registracionViewModel = db.RegistracionViewModels.Find(id);
+            /*RegistracionViewModel registracionViewModel = db.RegistracionViewModels.Find(id);
             db.RegistracionViewModels.Remove(registracionViewModel);
-            db.SaveChanges();
+            db.SaveChanges();*/
             return RedirectToAction("Index");
         }
 
