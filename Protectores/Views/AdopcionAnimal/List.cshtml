@@ -1,0 +1,45 @@
+﻿@model IEnumerable<Protectores.Models.AdopcionAnimal>
+
+@{
+    ViewBag.Title = "Animales en adopción";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Dar en adopción", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.usuarioId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.especie)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.usuarioId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.especie)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Ver mas", "Details", new { id=item.id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

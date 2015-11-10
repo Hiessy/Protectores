@@ -130,6 +130,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdopcionAnimalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegistracionViewModelsController.cs" />
     <Compile Include="DAL\ProtectoredInitializer.cs" />
@@ -187,6 +188,11 @@
     <Content Include="Views\RegistracionViewModels\Details.cshtml" />
     <Content Include="Views\RegistracionViewModels\Edit.cshtml" />
     <Content Include="Views\RegistracionViewModels\Index.cshtml" />
+    <Content Include="Views\AdopcionAnimal\Create.cshtml" />
+    <Content Include="Views\AdopcionAnimal\Details.cshtml" />
+    <Content Include="Views\AdopcionAnimal\Edit.cshtml" />
+    <Content Include="Views\AdopcionAnimal\Index.cshtml" />
+    <Content Include="Views\AdopcionAnimal\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
