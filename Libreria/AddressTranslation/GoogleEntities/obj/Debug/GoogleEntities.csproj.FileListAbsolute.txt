@@ -7,3 +7,8 @@ C:\proyectos\Protectores\Libreria\AddressTranslation\GoogleEntities\bin\Debug\Go
 C:\proyectos\Protectores\Libreria\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.dll
 C:\proyectos\Protectores\Libreria\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.pdb
 C:\proyectos\Protectores\Libreria\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.csprojResolveAssemblyReference.cache
+C:\proyecto\Protectores\Libreria\AddressTranslation\GoogleEntities\bin\Debug\GoogleEntities.dll
+C:\proyecto\Protectores\Libreria\AddressTranslation\GoogleEntities\bin\Debug\GoogleEntities.pdb
+C:\proyecto\Protectores\Libreria\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.csprojResolveAssemblyReference.cache
+C:\proyecto\Protectores\Libreria\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.dll
+C:\proyecto\Protectores\Libreria\AddressTranslation\GoogleEntities\obj\Debug\GoogleEntities.pdb
