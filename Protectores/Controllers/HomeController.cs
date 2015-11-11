@@ -28,6 +28,12 @@ namespace Protectores.Controllers
 
             return View();
         }
+        public ActionResult Location()
+        {
+            ViewBag.Message = "Your Location.";
+
+            return View();
+        }
 
     }
 }
