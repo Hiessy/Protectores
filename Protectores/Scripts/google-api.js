@@ -2,6 +2,7 @@
     function autoDetectLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (p) {
+              
                 var LatLng = new google.maps.LatLng(p.coords.latitude, p.coords.longitude);
                 var mapOptions = {
                     center: LatLng,
@@ -23,7 +24,15 @@
         } else {
             alert('Geo Location feature is not supported in this browser.');
         }
+       
     }
-
-
+    window.onload = autoDetectLocation;
     
+    function GeoSucces() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (p) {
+                document.getElementById('').value = p.coords.longitude;
+                document.getElementById('').value = p.coords.latitude;
+            });
+        }
+    }
