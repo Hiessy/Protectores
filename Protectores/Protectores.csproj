@@ -140,8 +140,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AdopcionAnimal.cs" />
+    <Compile Include="Models\Perfil.cs" />
     <Compile Include="Models\Contacto.cs" />
-    <Compile Include="Models\TipoAnimal.cs" />
+    <Compile Include="Models\TipoAyuda.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

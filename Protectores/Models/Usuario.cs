@@ -7,22 +7,29 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Protectores.Models
 {
-    public enum Perfil {
-        Basico, Protector, Adoptador, Ambos
-    }
     public class Usuario
     {
         [Key]
-        public int UsuarioID { get; set; }
-        public string Nombre { get; set; }
-        public string Apellido { get; set; }
-        [DataType(DataType.EmailAddress)]
-        public string Correo { get; set; }
-        public string Password { get; set; }
-        public Perfil Perfil { get; set; }
+        public int id { get; set; }
 
         [ForeignKey("Contacto")]
         public int ContactoId { get; set; }
         public virtual Contacto Contacto { get; set; }
+
+        [Required]
+        [StringLength(50)]
+        public string Nombre { get; set; }
+
+        [Required]
+        public string Apellido { get; set; }
+
+        [Required]
+        [DataType(DataType.EmailAddress)]
+        [Display(Name = "Correo Electrónico")]
+        public string Correo { get; set; }
+
+        [Required]
+        [Display(Name = "Contraseña")]
+        public string Password { get; set; }
     }
 }
