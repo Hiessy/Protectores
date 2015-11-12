@@ -1,10 +1,10 @@
 ﻿@model Protectores.Models.Usuario
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Registrate";
 }
 
-<h2>Create</h2>
+<h2>@ViewBag.Title</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>RegistracionViewModel</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         
@@ -95,23 +94,7 @@
                 @Html.ValidationMessageFor(model => model.Contacto.Telefono, "", new { @class = "text-danger" })
             </div>
         </div>
-        <!-- Testeo de la api de google, todavia no implementado-->
-        <div class="form-group" style="display:none">
-            @Html.LabelFor(model => model.Contacto.Latitud, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Contacto.Latitud, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Contacto.Latitud, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        
-        <div class="form-group" style="display:none">
-            @Html.LabelFor(model => model.Contacto.Longitud, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Contacto.Longitud, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Contacto.Longitud, "", new { @class = "text-danger" })
-            </div>
-        </div>
-        <!-- Fin del testeo de la api de google, todavia no implementado-->
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

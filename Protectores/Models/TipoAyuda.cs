@@ -7,24 +7,22 @@ using System.Web;
 
 namespace Protectores.Models
 {
-    public class AdopcionAnimal
+    public enum TipoAnimal
+    {
+        Perro,
+        Gato
+    }
+
+    public class TipoAyuda
     {
         [Key]
         public int id { get; set; }
 
+        [Required]
+        public TipoAnimal TipoAnimal { get; set; }
+
         [ForeignKey("Usuario")]
         public int UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
-
-        [Required]
-        [StringLength(20)]
-        [Display(Name = "Nombre de la mascota")]
-        public string nombre { get; set; }
-
-        [Required]
-        [StringLength(20)]
-        [RegularExpression(@"\d{0,20}", ErrorMessage = "La especie debe tener menos de 20 caracteres.")]
-        [Display(Name = "Especie")]
-        public string especie { get; set; }
     }
 }

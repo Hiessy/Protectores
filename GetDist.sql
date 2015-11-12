@@ -1,6 +1,4 @@
-
-
-USE [GeoLoca]
+USE [Protectores]
 GO
 
 /****** Object:  UserDefinedFunction [dbo].[FNT_GETDIST]    Script Date: 06/11/2015 01:24:21 p. m. ******/
@@ -10,7 +8,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE FUNCTION [dbo].[FNT_GETDIST4] (@lat1 Float(8),@long1 Float(8))
+CREATE FUNCTION [dbo].[FNT_GETDIST] (@lat1 Float(8),@long1 Float(8))
 RETURNS @DIST TABLE (ID INT,DIST INT)
 
 AS
@@ -28,7 +26,7 @@ DECLARE DISTANCIAS CURSOR FOR
 /***************************************************/
 /* CONSULTA DE DONDE SE VAN A SACAR LAS LAT Y LONG */
 /***************************************************/
-SELECT id_contact,lat,lon FROM ubicaciones 
+SELECT ContactoID,Latitud,Longitud FROM Contacto 
 
 OPEN DISTANCIAS
 
@@ -87,4 +85,3 @@ DELETE @DIST WHERE ID NOT IN (SELECT TOP 5 ID FROM @DIST ORDER BY DIST)
 RETURN
 END
 GO
-
