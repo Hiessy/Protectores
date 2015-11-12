@@ -6,13 +6,14 @@ using System.Web.Mvc;
 
 namespace Protectores.Controllers
 {
-    public class HomeController : Controller
+    public class LocationController : Controller
     {
+        //
+        // GET: /Location/
         public ActionResult Index()
         {
-            ViewBag.Message = "This is a test";
-            
+
             return View();
         }
-    }
+	}
 }

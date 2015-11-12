@@ -9,8 +9,9 @@
         <div class="input-group">
             <input type="text" id="pac-input" class="form-control" placeholder="ingresa tu dirección" aria-describedby="basic addon2" style="width:100%">
             <div class="input-group-btn" role="group">
-                <button type="button" class="btn btn-default">Buscar</button>
-                <button type="button" class="btn btn-danger" onclick="autoDetectLocation()">Auto-detectar</button>
+                <button type="button" class="btn btn-danger" onclick=location.href='@Url.Action("Index", "Location")'>Auto-detectar</button>
+                
+                <button type="button" class="btn btn-danger" onclick="window.location.href='@Url.Action("Index", "Location")'">Auto-detectar</button>
             </div>
         </div>
     </form>
