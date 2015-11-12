@@ -2,15 +2,13 @@
     ViewBag.Title = "Protectores";
 }
 
-<div class="jumbotron">
+<div class="jumbotron margin-top-20">
     <h1>¿Necesitas ayudas?</h1>
     <h2>Ingresa tu dirección</h2>
     <form>
         <div class="input-group">
             <input type="text" id="pac-input" class="form-control" placeholder="ingresa tu dirección" aria-describedby="basic addon2" style="width:100%">
             <div class="input-group-btn" role="group">
-                <button type="button" class="btn btn-danger" onclick=location.href='@Url.Action("Index", "Location")'>Auto-detectar</button>
-                
                 <button type="button" class="btn btn-danger" onclick="window.location.href='@Url.Action("Index", "Location")'">Auto-detectar</button>
             </div>
         </div>

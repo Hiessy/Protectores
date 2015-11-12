@@ -133,7 +133,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdopcionAnimalController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RegistracionViewModelsController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
+    <Compile Include="Controllers\RegistracionController.cs" />
     <Compile Include="DAL\ProtectoredInitializer.cs" />
     <Compile Include="DAL\ProtectoresContext.cs" />
     <Compile Include="Global.asax.cs">
@@ -182,24 +183,21 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\RegistracionViewModels\Create.cshtml" />
-    <Content Include="Views\RegistracionViewModels\Delete.cshtml" />
-    <Content Include="Views\RegistracionViewModels\Details.cshtml" />
-    <Content Include="Views\RegistracionViewModels\Edit.cshtml" />
-    <Content Include="Views\RegistracionViewModels\Index.cshtml" />
+    <Content Include="Views\Registracion\Create.cshtml" />
+    <Content Include="Views\Registracion\Delete.cshtml" />
+    <Content Include="Views\Registracion\Details.cshtml" />
+    <Content Include="Views\Registracion\Edit.cshtml" />
+    <Content Include="Views\Registracion\Index.cshtml" />
     <Content Include="Views\AdopcionAnimal\Create.cshtml" />
     <Content Include="Views\AdopcionAnimal\Details.cshtml" />
     <Content Include="Views\AdopcionAnimal\Edit.cshtml" />
     <Content Include="Views\AdopcionAnimal\Index.cshtml" />
     <Content Include="Views\AdopcionAnimal\List.cshtml" />
-    <Content Include="Views\Home\Location.cshtml" />
+    <Content Include="Views\Location\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
