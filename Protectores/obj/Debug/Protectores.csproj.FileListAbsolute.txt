@@ -178,3 +178,7 @@ C:\proyecto\Protectores\Protectores\bin\Newtonsoft.Json.xml
 C:\proyecto\Protectores\Protectores\obj\Debug\Protectores.csprojResolveAssemblyReference.cache
 C:\proyecto\Protectores\Protectores\obj\Debug\Protectores.dll
 C:\proyecto\Protectores\Protectores\obj\Debug\Protectores.pdb
+C:\projects\Protectores\Protectores\bin\GoogleApiRequest.dll
+C:\projects\Protectores\Protectores\bin\GoogleEntities.dll
+C:\projects\Protectores\Protectores\bin\GoogleApiRequest.pdb
+C:\projects\Protectores\Protectores\bin\GoogleEntities.pdb

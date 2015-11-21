@@ -11,7 +11,7 @@ namespace Protectores.Models
     {
 
         [Key]
-        public int id { get; set; }
+        public int ContactoId { get; set; }
 
         [ForeignKey("Usuario")]
         public int UsuarioId { get; set; }

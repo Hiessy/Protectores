@@ -49,15 +49,15 @@ namespace Protectores.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Usuario usuario2)
+        public ActionResult Create(Contacto contacto)
         {
-            GeocodeResponse geoPosicion = GoogleConnector.MakeRequest(usuario2.Contacto.AddressNumber, usuario2.Contacto.StreetName, usuario2.Contacto.CityName, usuario2.Contacto.CountryName);
+            GeocodeResponse geoPosicion = GoogleConnector.MakeRequest(contacto.AddressNumber, contacto.StreetName, contacto.CityName, contacto.CountryName);
             Console.WriteLine(geoPosicion);
-            usuario2.Contacto.Latitud = geoPosicion.results[0].geometry.location.lat;
-            usuario2.Contacto.Longitud = geoPosicion.results[0].geometry.location.lng;
+            contacto.Latitud = geoPosicion.results[0].geometry.location.lat;
+            contacto.Longitud = geoPosicion.results[0].geometry.location.lng;
             
-            db.Contacto.Add(usuario2.Contacto);
-            db.Usuarios.Add(usuario2);
+ //           db.Contacto.Add(usuario2.Contacto);
+            db.Contacto.Add(contacto);
             db.SaveChanges();
             return RedirectToAction("Index", "Home");
         }

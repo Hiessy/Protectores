@@ -16,7 +16,7 @@ namespace Protectores.Models
     public class Perfil
     {
         [Key]
-        public int id { get; set; }
+        public int PerfilId { get; set; }
 
         [Required]
         public TipoPerfil TipoPerfil { get; set; }

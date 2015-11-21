@@ -16,7 +16,7 @@ namespace Protectores.Models
     public class TipoAyuda
     {
         [Key]
-        public int id { get; set; }
+        public int AyudaId { get; set; }
 
         [Required]
         public TipoAnimal TipoAnimal { get; set; }

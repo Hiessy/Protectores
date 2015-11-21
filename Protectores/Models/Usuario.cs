@@ -10,11 +10,7 @@ namespace Protectores.Models
     public class Usuario
     {
         [Key]
-        public int id { get; set; }
-
-        [ForeignKey("Contacto")]
-        public int ContactoId { get; set; }
-        public virtual Contacto Contacto { get; set; }
+        public int UsuarioId { get; set; }
 
         [Required]
         [StringLength(50)]

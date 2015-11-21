@@ -10,7 +10,7 @@ namespace Protectores.Models
     public class AdopcionAnimal
     {
         [Key]
-        public int id { get; set; }
+        public int AdopcionAnimalId { get; set; }
 
         [ForeignKey("Usuario")]
         public int UsuarioId { get; set; }
