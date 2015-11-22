@@ -5,19 +5,21 @@
 <div class="jumbotron margin-top-20">
     <h1>¿Necesitas ayudas?</h1>
     <h2>Ingresa tu dirección</h2>
+
     <form>
         <div class="input-group">
-            <input type="text" id="pac-input" class="form-control" placeholder="ingresa tu dirección" aria-describedby="basic addon2" style="width:100%">
+            <input id="pac-input" class="form-control" type="text" placeholder="ingresa tu dirección" aria-describedby="basic addon2" style="width:100%">
             <div class="input-group-btn" role="group">
                 <button type="button" class="btn btn-danger" onclick="window.location.href='@Url.Action("Index", "Location")'">Auto-detectar</button>
             </div>
         </div>
+        
     </form>
 </div>
+<div id="map" style="height: 500px" class="col-md-12"></div>
 
 
-
-@*Script de Autocompletar*@
-<script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=places&callback=initMap" async defer></script>
-<script src="~/Scripts/autocompletar.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA6Lm_D_YgYKyr-we3kWN4od3MAd9gQcA&signed_in=true&libraries=places&callback=initMap"
+        async defer></script>
+<script src="~/Scripts/GeoCoding.js"></script>
 
