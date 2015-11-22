@@ -23,7 +23,6 @@ namespace Protectores.Models
 
         [Required]
         [StringLength(20)]
-        [RegularExpression(@"\d{0,20}", ErrorMessage = "La especie debe tener menos de 20 caracteres.")]
         [Display(Name = "Especie")]
         public string especie { get; set; }
     }

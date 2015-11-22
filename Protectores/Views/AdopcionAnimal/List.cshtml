@@ -12,7 +12,7 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.usuarioId)
+            @Html.DisplayNameFor(model => model.Usuario.UsuarioId)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.nombre)
@@ -26,7 +26,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.usuarioId)
+            @Html.DisplayFor(modelItem => item.Usuario.UsuarioId)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.nombre)
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.especie)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Ver mas", "Details", new { id=item.id }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.id })
+            @Html.ActionLink("Editar", "Edit", new { id=item.AdopcionAnimalId }) |
+            @Html.ActionLink("Ver mas", "Details", new { id=item.AdopcionAnimalId }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.AdopcionAnimalId })
         </td>
     </tr>
 }

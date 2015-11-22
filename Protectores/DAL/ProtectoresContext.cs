@@ -13,6 +13,7 @@ namespace Protectores.DAL
         }
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Contacto> Contacto { get; set; }
+        public DbSet<AdopcionAnimal> AdopcionAnimal { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

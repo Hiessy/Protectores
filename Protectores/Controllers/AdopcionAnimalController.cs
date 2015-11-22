@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Protectores.DAL;
+using Protectores.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -8,6 +11,8 @@ namespace Protectores.Controllers
 {
     public class AdopcionAnimalController : Controller
     {
+        private ProtectoresContext db = new ProtectoresContext();
+
         // GET: AdopcionAnimal
         public ActionResult Index()
         {
@@ -17,13 +22,13 @@ namespace Protectores.Controllers
         // GET: AdopcionAnimal/List
         public ActionResult List()
         {
-            return View();
+            return View(db.AdopcionAnimal);
         }
 
         // GET: AdopcionAnimal/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            return View(db.AdopcionAnimal.Find(id));
         }
 
         // GET: AdopcionAnimal/Create
@@ -34,12 +39,19 @@ namespace Protectores.Controllers
 
         // POST: AdopcionAnimal/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(AdopcionAnimal adopcion)
         {
             try
             {
-                // TODO: Add insert logic here
-
+                Usuario usuario = new Usuario();
+                usuario.UsuarioId = 119;
+                usuario.Apellido = "XXX";
+                usuario.Correo = "adopcion@gmail.com";
+                usuario.Nombre = "ppee";
+                usuario.Password = "123";
+                adopcion.Usuario = usuario;
+                db.AdopcionAnimal.Add(adopcion);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch
@@ -56,11 +68,15 @@ namespace Protectores.Controllers
 
         // POST: AdopcionAnimal/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(int id, AdopcionAnimal adopcion)
         {
             try
             {
-                // TODO: Add update logic here
+                AdopcionAnimal adopcionPersist = db.AdopcionAnimal.Find(id);
+                adopcionPersist.nombre = adopcion.nombre;
+                adopcionPersist.especie = adopcion.especie;
+                db.Entry(adopcionPersist).State = EntityState.Modified;
+                db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -73,7 +89,7 @@ namespace Protectores.Controllers
         // GET: AdopcionAnimal/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            return View(db.AdopcionAnimal.Find(id));
         }
 
         // POST: AdopcionAnimal/Delete/5
@@ -82,9 +98,10 @@ namespace Protectores.Controllers
         {
             try
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                AdopcionAnimal adopcionAnimal = db.AdopcionAnimal.Find(id);
+                db.AdopcionAnimal.Remove(adopcionAnimal);
+                db.SaveChanges();
+                return RedirectToAction("List");
             }
             catch
             {
