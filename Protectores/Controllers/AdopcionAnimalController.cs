@@ -43,7 +43,7 @@ namespace Protectores.Controllers
         {
             try
             {
-                Usuario usuario = new Usuario();
+                /*Usuario usuario = new Usuario();
                 usuario.UsuarioId = 119;
                 usuario.Apellido = "XXX";
                 usuario.Correo = "adopcion@gmail.com";
@@ -51,7 +51,7 @@ namespace Protectores.Controllers
                 usuario.Password = "123";
                 adopcion.Usuario = usuario;
                 db.AdopcionAnimal.Add(adopcion);
-                db.SaveChanges();
+                db.SaveChanges();*/
                 return RedirectToAction("Index");
             }
             catch
