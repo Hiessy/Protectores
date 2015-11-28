@@ -15,5 +15,17 @@ namespace Protectores.Controllers
 
             return View();
         }
+
+        // POST: /Location/GetResult
+        [HttpPost]
+        public ActionResult GetResult(String data)
+        {
+    /*        string lat = data.
+           lat:,
+
+            lon:}
+        */
+            return View();
+        }
 	}
 }
