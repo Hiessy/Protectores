@@ -2,11 +2,17 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
 namespace Protectores.Models
 {
+    public enum Country
+    {
+        Argentina,
+        Uruguay
+    }
     public class Contacto
     {
 
@@ -19,10 +25,6 @@ namespace Protectores.Models
 
         public double Latitud { get; set; }
         public double Longitud { get; set; }
-
-        [StringLength(50)]
-        [Display(Name = "Organización")]
-        public string Organizacion { get; set; }
 
         [Required]
         [StringLength(20)]
@@ -41,12 +43,15 @@ namespace Protectores.Models
 
         [Required]
         [StringLength(50)]
-        [Display(Name = "País")]
-        public string CountryName { get; set; }
-
-        [Required]
-        [StringLength(50)]
         [Display(Name = "Teléfono")]
         public string Telefono { get; set; }
+
+        [Required]
+        [Display(Name = "País")]
+        public Country CountryName { get; set; }
+
+        [Required]
+        [Display(Name = "¿Es Protector?")]
+        public bool IsProtector { get; set; }
     }
 }

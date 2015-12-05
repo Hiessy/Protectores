@@ -51,12 +51,11 @@ namespace Protectores.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(Contacto contacto)
         {
-            GeocodeResponse geoPosicion = GoogleConnector.MakeRequest(contacto.AddressNumber, contacto.StreetName, contacto.CityName, contacto.CountryName);
+            GeocodeResponse geoPosicion = GoogleConnector.MakeRequest(contacto.AddressNumber, contacto.StreetName, contacto.CityName, contacto.CountryName.ToString());
             Console.WriteLine(geoPosicion);
             contacto.Latitud = geoPosicion.results[0].geometry.location.lat;
             contacto.Longitud = geoPosicion.results[0].geometry.location.lng;
-            
- //           db.Contacto.Add(usuario2.Contacto);
+
             db.Contacto.Add(contacto);
             db.SaveChanges();
             return RedirectToAction("Index", "Home");
@@ -67,13 +66,13 @@ namespace Protectores.Controllers
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-        /*    Registracion registracion = db.Registracion.Find(id);
-            if (registracion == null)
+           }
+            Contacto contacto = db.Contacto.Find(id);
+            if (contacto == null)
             {
                 return HttpNotFound();
-            }*/
-            return View();
+            }
+            return View(contacto);
         }
 
         // POST: Registracion/Edit/5
