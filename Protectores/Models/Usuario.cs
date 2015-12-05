@@ -19,10 +19,9 @@ namespace Protectores.Models
         [Required]
         public string Apellido { get; set; }
 
+        [Required]
         [DataType(DataType.EmailAddress)]
         [Display(Name = "Correo Electrónico")]
-        [Required(ErrorMessage = "The email address is required")]
-        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string Correo { get; set; }
 
         [Required]

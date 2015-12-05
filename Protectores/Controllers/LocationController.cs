@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Runtime.Serialization.Json;
+
 
 namespace Protectores.Controllers
 {
@@ -15,19 +17,6 @@ namespace Protectores.Controllers
         // GET: /Location/
         public ActionResult Index()
         {
-            //var messages = new List<Contacto>();
-            //using (var db = new ProtectoresContext())
-            {
-                //string query = "select ContactoID,UsuarioID,Latitud,Longitud,Organizacion,AddressNumber,StreetName,CityName,CountryName,Telefono from dbo.FNT_GETDIST (-34.610111, - 58.428953)";
-                //List<Contacto> contactos = db.Contacto.SqlQuery(query).ToList();
-              /*  foreach (Contacto cont in contactos)
-                {
-                    cont.Usuario = new Usuario();
-                }*/
-                //messages.AddRange(contactos);
-            }
-
-            //return View(messages);
             return View();
         }
 
@@ -36,11 +25,26 @@ namespace Protectores.Controllers
         [HttpPost]
         public ActionResult GetResult(String data)
         {
-    /*        string lat = data.
-           lat:,
+            var messages = new List<Contacto>();
 
-            lon:}
-        */
+            int valor = data.IndexOf(':', data.IndexOf(':') + 1) + 1;
+
+            string lat = data.Substring(5,(data.IndexOf(',')-5));
+            string lon = data.Substring(valor, data.IndexOf('}') - valor); 
+            string query = "select ContactoID,UsuarioID,Latitud,Longitud,AddressNumber,StreetName,CityName,CountryName,Telefono,IsProtector from dbo.FNT_GETDIST ("+lat+", "+lon+")";
+            List<Contacto> contactos = db.Contacto.SqlQuery(query).ToList();
+            //foreach (Contacto cont in contactos)
+            //{
+            //    cont.Usuario = new Usuario();
+            //}
+            //messages.AddRange(contactos);
+
+            //return View(messages);
+            /*        string lat = data.
+                   lat:,
+
+                    lon:}
+                */
             return View();
         }
 	}
