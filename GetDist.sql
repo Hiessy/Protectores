@@ -1,15 +1,14 @@
 USE [Protectores]
 GO
-
-/****** Object:  UserDefinedFunction [dbo].[FNT_GETDIST]    Script Date: 06/11/2015 01:24:21 p. m. ******/
+/****** Object:  UserDefinedFunction [dbo].[FNT_GETDIST]    Script Date: 12/5/2015 3:33:32 PM ******/
 SET ANSI_NULLS ON
 GO
-
 SET QUOTED_IDENTIFIER ON
 GO
 
-CREATE FUNCTION [dbo].[FNT_GETDIST] (@lat1 Float(8),@long1 Float(8))
-RETURNS @DIST TABLE (ID INT,DIST INT)
+
+ALTER FUNCTION [dbo].[FNT_GETDIST] (@lat1 Float(8),@long1 Float(8))
+RETURNS @DIST TABLE (ContactoID INT,UsuarioID INT,Latitud float,Longitud float,DIST Float(8),Organizacion nvarchar (max),AddressNumber nvarchar (max),StreetName nvarchar (max),CityName nvarchar (max),CountryName nvarchar (max),Telefono nvarchar (max))
 
 AS
 
@@ -18,15 +17,22 @@ BEGIN
 /*DECLARO VARIABLES PARA CICLAR*/
 /*******************************/
 DECLARE
-@ID INT,
+@CID Float(8),
+@UID Float(8),
 @lat2 Float(8),
-@long2 Float(8)
+@long2 Float(8),
+@org nvarchar (max),
+@address nvarchar(max),
+@street nvarchar(max),
+@city nvarchar (max),
+@country nvarchar (max),
+@tel nvarchar (max)
 
 DECLARE DISTANCIAS CURSOR FOR
 /***************************************************/
 /* CONSULTA DE DONDE SE VAN A SACAR LAS LAT Y LONG */
 /***************************************************/
-SELECT ContactoID,Latitud,Longitud FROM Contacto 
+SELECT ContactoID,UsuarioID,Latitud,Longitud,Organizacion,AddressNumber,StreetName,CityName,CountryName,Telefono FROM Contacto 
 
 OPEN DISTANCIAS
 
@@ -34,7 +40,7 @@ FETCH DISTANCIAS
 /******************************/
 /*INSERTA DATOS PARA EL CICLAR*/
 /******************************/
-INTO @id,@lat2,@long2
+INTO @Cid,@uid,@lat2,@long2,@org,@address,@street,@city,@country,@tel
 /**************/
 /*INICIA CICLO*/
 /**************/
@@ -65,13 +71,14 @@ DECLARE
 /**********************************************************/
 /*INSERTA X CADA CICLO EL ID Y LA DISTANCIA AL PTO BUSCADO*/
 /**********************************************************/
-INSERT INTO @DIST (ID,DIST) VALUES(@id,cast(@d as int))
+INSERT INTO @DIST (ContactoID,UsuarioID,Latitud,Longitud,DIST,Organizacion,AddressNumber,StreetName,CityName,CountryName,Telefono) 
+VALUES(@cid,@uid,@lat2,@long2,cast(@d as Float(8)),@org,@address,@street,@city,@country,@tel)
 
 /**********************************/
 /*VUELVE A CICLAR POR EL SIGUIENTE*/
 /**********************************/
 FETCH DISTANCIAS 
-INTO @id,@lat2,@long2
+INTO @cid,@uid,@lat2,@long2,@org,@address,@street,@city,@country,@tel
 
 END
 
@@ -80,8 +87,8 @@ DEALLOCATE DISTANCIAS
 /******************************************/
 /*DEJA EN LA TABLA SOLO LOS 5 MAS CERCANOS*/
 /******************************************/
-DELETE @DIST WHERE ID NOT IN (SELECT TOP 5 ID FROM @DIST ORDER BY DIST)
+DELETE @DIST WHERE ContactoID NOT IN (SELECT TOP 5 ContactoID FROM @DIST ORDER BY DIST)
 
 RETURN
 END
-GO
+
