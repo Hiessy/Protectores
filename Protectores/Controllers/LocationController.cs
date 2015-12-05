@@ -15,19 +15,20 @@ namespace Protectores.Controllers
         // GET: /Location/
         public ActionResult Index()
         {
-            var messages = new List<Contacto>();
-            using (var db = new ProtectoresContext())
+            //var messages = new List<Contacto>();
+            //using (var db = new ProtectoresContext())
             {
-                string query = "select ContactoID,UsuarioID,Latitud,Longitud,Organizacion,AddressNumber,StreetName,CityName,CountryName,Telefono from dbo.FNT_GETDIST (-34.610111, - 58.428953)";
-                List<Contacto> contactos = db.Contacto.SqlQuery(query).ToList();
+                //string query = "select ContactoID,UsuarioID,Latitud,Longitud,Organizacion,AddressNumber,StreetName,CityName,CountryName,Telefono from dbo.FNT_GETDIST (-34.610111, - 58.428953)";
+                //List<Contacto> contactos = db.Contacto.SqlQuery(query).ToList();
               /*  foreach (Contacto cont in contactos)
                 {
                     cont.Usuario = new Usuario();
                 }*/
-                messages.AddRange(contactos);
+                //messages.AddRange(contactos);
             }
 
-            return View(messages);
+            //return View(messages);
+            return View();
         }
 
 

@@ -12,6 +12,7 @@ namespace Protectores.Controllers
     public class AdopcionAnimalController : Controller
     {
         private ProtectoresContext db = new ProtectoresContext();
+        private Usuario usuario;
 
         // GET: AdopcionAnimal
         public ActionResult Index()
@@ -43,15 +44,10 @@ namespace Protectores.Controllers
         {
             try
             {
-                /*Usuario usuario = new Usuario();
-                usuario.UsuarioId = 119;
-                usuario.Apellido = "XXX";
-                usuario.Correo = "adopcion@gmail.com";
-                usuario.Nombre = "ppee";
-                usuario.Password = "123";
-                adopcion.Usuario = usuario;
+                int formID = int.Parse(Session["UsuarioId"].ToString());
+                adopcion.Usuario = db.Usuarios.Find(formID);
                 db.AdopcionAnimal.Add(adopcion);
-                db.SaveChanges();*/
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             catch

@@ -10,7 +10,7 @@ namespace Protectores.Controllers
 {
     public class LoginController : Controller
     {
-        private ProtectoresContext dc = new ProtectoresContext();
+        private ProtectoresContext db = new ProtectoresContext();
 
         // GET: Registracion
         public ActionResult Index()
@@ -22,14 +22,14 @@ namespace Protectores.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(Usuario u)
         {
-            var v = dc.Usuarios.Where(a => a.Correo.Equals(u.Correo) && a.Password.Equals(u.Password)).FirstOrDefault();
+            Usuario v = db.Usuarios.Where(a => a.Correo.Equals(u.Correo) && a.Password.Equals(u.Password)).FirstOrDefault();
             if (v != null)
             {
-                Session["LogedUserID"] = v.Correo.ToString();
-                Session["LogedUserFullname"] = v.Nombre.ToString();
-                return RedirectToAction("Create", "Registracion");
+                Session["UsuarioId"] = v.UsuarioId;
+                Session["Nombre"] = v.Nombre.ToString();                
+                return RedirectToAction("Index", "AdopcionAnimal");
             }
-
+            
             return View();
         }
 

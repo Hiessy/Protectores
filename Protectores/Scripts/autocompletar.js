@@ -1,17 +1,29 @@
-﻿function initMap() {
+﻿function initialize() {
     var input = document.getElementById('pac-input');
     var autocomplete = new google.maps.places.Autocomplete(input);
-    autocomplete.addListener('place_changed', function () {
-        infowindow.close();
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
         var place = autocomplete.getPlace();
-        var address = '';
-        if (place.address_components) {
-            address = [
-(place.address_components[0] && place.address_components[0].short_name || ''),
-(place.address_components[1] && place.address_components[1].short_name || ''),
-(place.address_components[2] && place.address_components[2].short_name || '')
-            ].join(' ');
-        }
-        infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+        document.getElementById('city2').value = place.name;
+        //document.getElementById('cityLat').value = place.geometry.location.lat();
+        //document.getElementById('cityLng').value = place.geometry.location.lng();
+        $("<p>" + place.geometry.location.lat() + "</p>").appendTo('#lat');
+        $("<p>" + place.geometry.location.lng() + "</p>").appendTo('#lon');
+        $.ajax({
+            url: '/Location/GetResult',
+            type: 'POST',
+            dataType: 'json',
+            data: { data: "{lat: " + place.geometry.location.lat() + ", lon : " + place.geometry.location.lng() + "}" },
+            success: function () {
+                console.log('exito');
+            },
+            error: function () {
+                console.log('fracaso');
+            }
+        });
+        //alert("This function is working!");
+        //alert(place.name);
+        // alert(place.address_components[0].long_name);
+
     });
 }
+google.maps.event.addDomListener(window, 'load', initialize);

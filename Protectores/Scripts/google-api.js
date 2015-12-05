@@ -37,7 +37,7 @@
                     url: '/Location/GetResult',
                     type: 'POST',
                     dataType: 'json',
-                    data: {data: "´{lat: " + p.coords.latitude + ", lon : " +  p.coords.longitude + "}"},
+                    data: {data: "{lat: " + p.coords.latitude + ", lon : " +  p.coords.longitude + "}"},
                     success: function () {
                         console.log('exito');
                     },
