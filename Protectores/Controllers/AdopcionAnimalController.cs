@@ -12,7 +12,6 @@ namespace Protectores.Controllers
     public class AdopcionAnimalController : Controller
     {
         private ProtectoresContext db = new ProtectoresContext();
-        private Usuario usuario;
 
         // GET: AdopcionAnimal
         public ActionResult Index()

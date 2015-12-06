@@ -78,15 +78,22 @@ namespace Protectores.Controllers
         // POST: Registracion/Edit/5
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit()
+        public ActionResult Edit(Contacto contacto)
         {
             if (ModelState.IsValid)
             {
-           /*     db.Entry().State = EntityState.Modified;
+                GeocodeResponse geoPosicion = GoogleConnector.MakeRequest(contacto.AddressNumber, contacto.StreetName, contacto.CityName, contacto.CountryName.ToString());
+                Console.WriteLine(geoPosicion);
+                contacto.Latitud = geoPosicion.results[0].geometry.location.lat;
+                contacto.Longitud = geoPosicion.results[0].geometry.location.lng;
+                contacto.Usuario.UsuarioId = int.Parse(Session["UsuarioId"].ToString());
+                contacto.UsuarioId = contacto.Usuario.UsuarioId;
+                db.Entry(contacto.Usuario).State = EntityState.Modified;
+                db.Entry(contacto).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");*/
+                return RedirectToAction("Index", "Home");
             }
             return View();
         }

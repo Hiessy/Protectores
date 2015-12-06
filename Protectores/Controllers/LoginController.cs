@@ -27,7 +27,7 @@ namespace Protectores.Controllers
             {
                 Session["UsuarioId"] = v.UsuarioId;
                 Session["Nombre"] = v.Nombre.ToString();                
-                return RedirectToAction("Index", "AdopcionAnimal");
+                return RedirectToAction("Edit/"+ v.UsuarioId, "Registracion");
             }
             
             return View();
