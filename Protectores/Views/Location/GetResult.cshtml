@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Localización";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@*Script de Geolocation*@
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="~/Scripts/google-api.js"></script>
+
+@*Supongo que esta etiqueta va en la hoja de estilo*@
+<div id="dvMap" style="height: 500px" class="col-md-12"></div>
+
+<div id="Latitud"></div>
