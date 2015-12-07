@@ -10,16 +10,13 @@
         <div class="input-group">
             <input id="pac-input" class="form-control" type="text" placeholder="ingresa tu dirección" aria-describedby="basic addon2" style="width:100%">
             <div class="input-group-btn" role="group">
-                <button type="button" class="btn btn-success" onclick="initialize()">Buscar</button>
-                <button type="button" class="btn btn-danger" onclick="GeoSucces()">Auto-detectar</button>
+                <button type="button" class="btn btn-success" onclick="initialize();">Buscar</button>
+                <button type="button" class="btn btn-danger" onclick="GeoSucces();">Auto-detectar</button>
             </div>
         </div>
         
     </form>
 </div>
-@*Script de Autocompletar*@
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA6Lm_D_YgYKyr-we3kWN4od3MAd9gQcA&signed_in=true&libraries=places&callback=initialize" async defer></script>
-
 <script src="~/Scripts/autocompletar.js"></script>
 <script src="~/Scripts/google-api.js"></script>
-
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAA6Lm_D_YgYKyr-we3kWN4od3MAd9gQcA&signed_in=true&libraries=places" async defer></script>
