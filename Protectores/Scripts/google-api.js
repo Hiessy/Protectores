@@ -1,23 +1,29 @@
-    function GeoSucces() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (p) {
-                $("<p>" + p.coords.latitude + "</p>").appendTo('#lat');
-                $("<p>" + p.coords.longitude + "</p>").appendTo('#lon');
+function GeoSucces() {
+    if (navigator.geolocation) {
+        var pos;
+        navigator.geolocation.getCurrentPosition(function (position) {
+            pos = {lat: position.coords.latitude,lng: position.coords.longitude}
+        }, function() {}, {timeout:5000});
 
-                $.ajax({
-                    url: '/Location/GetResult',
-                    type: 'POST',
-                    dataType: 'json',
-                    data: {data: "{lat:" + p.coords.latitude + ", lon:" +  p.coords.longitude + "}"},
-                    success: function () {
-                        console.log('exito');
-                    },
-                    error: function () {
-                        console.log('fracaso');
-                    }
-                });
-            });
+        if (pos != null){
+            $('#LatitudId').val(pos['lat']);
+            $('#LongitudId').val(pos['lng']);
+        } else {
+            $('#LatitudId').val('-34.6036844');
+            $('#LongitudId').val('-58.3815591');
+            $('#TelefonoId').val('test');
         }
+
+     $('#CoordBtnId').click();
+
+        // Hardcodeamos dos valores por restricciones de google-api
+
     }
+}
+
+
+
+
+
    
 	

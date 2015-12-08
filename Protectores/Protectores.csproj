@@ -142,6 +142,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AdopcionAnimal.cs" />
+    <Compile Include="Models\Coodenadas.cs" />
     <Compile Include="Models\Perfil.cs" />
     <Compile Include="Models\Contacto.cs" />
     <Compile Include="Models\TipoAyuda.cs" />
@@ -169,6 +170,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\MapMarker.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
@@ -198,6 +200,7 @@
     <Content Include="Views\Location\Index.cshtml" />
     <Content Include="Views\AdopcionAnimal\Delete.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Location\GetResults.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

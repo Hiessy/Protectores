@@ -1,0 +1,40 @@
+﻿@using Newtonsoft.Json
+
+@model IEnumerable<Protectores.Models.Contacto>
+@{
+    ViewBag.Title = "GetResults";
+}
+
+<script type="text/javascript">
+    var data = @Html.Raw(Json.Encode(Model));
+</script>
+
+<h2>@ViewBag.Title</h2>
+@*Script de Geolocation*@
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="~/Scripts/google-api.js"></script>
+<script src="~/Scripts/MapMarker.js"></script>
+
+<div id="dvMap" style="height: 500px" class="col-md-12"></div>
+
+@*@foreach (var item in Model)
+{
+    <section>
+        <div class="col-md-4">
+            <label>Apellido</label>
+            @Html.DisplayFor(modelItem => item.Usuario.Apellido)
+        </div>
+        <div class="col-md-4">
+            <label>Nombre</label>
+            @Html.DisplayFor(modelItem => item.Usuario.Nombre)
+        </div>
+        <div class="col-md-4">
+            <label>Teléfono</label>
+            @Html.DisplayFor(modelItem => item.Telefono)
+        </div>
+    </section>
+}*@
+
+<script type="text/javascript">
+    initMap(data);
+</script>

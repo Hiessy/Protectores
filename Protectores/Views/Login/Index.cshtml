@@ -1,16 +1,15 @@
 ﻿@model Protectores.Models.Usuario
-
 @{
     ViewBag.Title = "Login";
 }
-
 <h2>Login</h2>
-
 @using (Html.BeginForm("Login", "Login", FormMethod.Post))
 {
     //this  is for create form tag
-    @Html.AntiForgeryToken()          // this is for prevent CSRF attack
-                                    @Html.ValidationSummary(true)
+    @Html.AntiForgeryToken()
+    // this is for prevent CSRF attack
+    @Html.ValidationSummary(true)
+
     if (@ViewBag.Message != null)
     {
         <div style="border:1px solid red">
@@ -24,15 +23,9 @@
             <td>@Html.ValidationMessageFor(a => a.Correo)</td>
         </tr>
         <tr>
-            <td>
-                @Html.LabelFor(a => a.Password)
-            </td>
-            <td>
-                @Html.PasswordFor(a => a.Password)
-            </td>
-            <td>
-                @Html.ValidationMessageFor(a => a.Password)
-            </td>
+            <td>@Html.LabelFor(a => a.Password)</td>
+            <td>@Html.PasswordFor(a => a.Password)</td>
+            <td>@Html.ValidationMessageFor(a => a.Password)</td>
         </tr>
         <tr>
             <td></td>
@@ -43,9 +36,7 @@
         </tr>
     </table>
 }
-
 @* This below line is for create javascript section *@
-
 @section Scripts{
     @Scripts.Render("~/bundles/jqueryval")
 }

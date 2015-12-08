@@ -25,6 +25,7 @@ namespace Protectores.Controllers
             Usuario v = db.Usuarios.Where(a => a.Correo.Equals(u.Correo) && a.Password.Equals(u.Password)).FirstOrDefault();
             if (v != null)
             {
+                ViewBag.logged = true;
                 Session["UsuarioId"] = v.UsuarioId;
                 Session["Nombre"] = v.Nombre.ToString();                
                 return RedirectToAction("Edit/"+ v.UsuarioId, "Registracion");

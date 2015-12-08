@@ -3,9 +3,9 @@ using Protectores.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization.Json;
 using System.Web;
 using System.Web.Mvc;
-using System.Runtime.Serialization.Json;
 
 
 namespace Protectores.Controllers
@@ -22,30 +22,21 @@ namespace Protectores.Controllers
 
 
         // POST: /Location/GetResult
-        [HttpPost]
-        public ActionResult GetResult(String data)
+       
+        public ActionResult GetResults(Coodenadas coords)
         {
             var messages = new List<Contacto>();
 
-            int valor = data.IndexOf(':', data.IndexOf(':') + 1) + 1;
-
-            string lat = data.Substring(5,(data.IndexOf(',')-5));
-            string lon = data.Substring(valor, data.IndexOf('}') - valor); 
-            string query = "select ContactoID,UsuarioID,Latitud,Longitud,AddressNumber,StreetName,CityName,CountryName,Telefono,IsProtector from dbo.FNT_GETDIST ("+lat+", "+lon+")";
+            string query = "select ContactoID,UsuarioID,Latitud,Longitud,AddressNumber,StreetName,CityName,CountryName,Telefono,IsProtector from dbo.FNT_GETDIST (" + coords.Latitud + ", " + coords.Longitud + ")";
             List<Contacto> contactos = db.Contacto.SqlQuery(query).ToList();
-            //foreach (Contacto cont in contactos)
-            //{
-            //    cont.Usuario = new Usuario();
-            //}
-            //messages.AddRange(contactos);
+    /*        foreach (Contacto cont in contactos)
+            {
+                cont.Usuario = new Usuario();
+            }*/
+            messages.AddRange(contactos);
 
-            //return View(messages);
-            /*        string lat = data.
-                   lat:,
 
-                    lon:}
-                */
-            return View();
+            return View(messages);
         }
 	}
 }
