@@ -10,8 +10,10 @@ namespace Protectores.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "This is a test";
-            
+            if (HttpContext.Session["Logged"] == null)
+            {
+                HttpContext.Session["Logged"] = false;
+            }
             return View();
         }
     }

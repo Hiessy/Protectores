@@ -63,6 +63,11 @@ namespace Protectores.Controllers
         // GET: Registracion/Edit/5
         public ActionResult Edit(int? id)
         {
+            if (ViewBag.logged == null)
+            {
+                ViewBag.logged = false;
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -82,6 +87,11 @@ namespace Protectores.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Contacto contacto)
         {
+            if (ViewBag.logged == null)
+            {
+                ViewBag.logged = false;
+            }
+
             if (ModelState.IsValid)
             {
                 GeocodeResponse geoPosicion = GoogleConnector.MakeRequest(contacto.AddressNumber, contacto.StreetName, contacto.CityName, contacto.CountryName.ToString());
