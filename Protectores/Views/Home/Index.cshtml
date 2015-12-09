@@ -1,4 +1,4 @@
-﻿@model Protectores.Models.Coodenadas
+﻿@model Protectores.Models.Coordenadas
 
 @{
     ViewBag.Title = "Protectores";
@@ -12,11 +12,10 @@
         <div class="input-group">
             <input id="pac-input" class="form-control" type="text" placeholder="ingresa tu dirección" aria-describedby="basic addon2" style="width:100%">
             <div class="input-group-btn" role="group">
-                <button type="button" class="btn btn-success" onclick="initialize();">Buscar</button>
+                <button type="button" class="btn btn-success" onclick="Buscar();">Buscar</button>
                 <button type="button" class="btn btn-danger" onclick="GeoSucces();">Auto-detectar</button>
             </div>
         </div>
-
     </form>
 </div>
 

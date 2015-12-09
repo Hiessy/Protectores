@@ -5,7 +5,7 @@ using System.Web;
 
 namespace Protectores.Models
 {
-    public class Coodenadas
+    public class Coordenadas
     {
         public String Latitud { get; set; }
         public String Longitud { get; set; }

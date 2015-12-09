@@ -17,27 +17,6 @@ namespace Protectores.Controllers
     {
         private ProtectoresContext db = new ProtectoresContext();
 
-        // GET: Registracion
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-        // GET: Registracion/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-        /*    Registracion registracion = db.RegistracionViewModels.Find(id);
-            if (registracion == null)
-            {
-                return HttpNotFound();
-            }*/
-            return View();
-        }
-
         // GET: Registracion/Create
         public ActionResult Create()
         {
@@ -45,8 +24,6 @@ namespace Protectores.Controllers
         }
 
         // POST: Registracion/Create
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Contacto contacto)
@@ -63,11 +40,6 @@ namespace Protectores.Controllers
         // GET: Registracion/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (ViewBag.logged == null)
-            {
-                ViewBag.logged = false;
-            }
-
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -81,17 +53,10 @@ namespace Protectores.Controllers
         }
 
         // POST: Registracion/Edit/5
-        // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
-        // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost, ActionName("Edit")]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Contacto contacto)
         {
-            if (ViewBag.logged == null)
-            {
-                ViewBag.logged = false;
-            }
-
             if (ModelState.IsValid)
             {
                 GeocodeResponse geoPosicion = GoogleConnector.MakeRequest(contacto.AddressNumber, contacto.StreetName, contacto.CityName, contacto.CountryName.ToString());
@@ -106,46 +71,6 @@ namespace Protectores.Controllers
                 return RedirectToAction("Index", "Home");
             }
             return View();
-        }
-
-        // GET: Registracion/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-      /*      Registracion registracion = db.Registracion.Find(id);
-            if (registracion == null)
-            {
-                return HttpNotFound();
-            }*/
-            return View();
-        }
-
-        // POST: Registracion/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            /*Registracion registracion = db.Registracion.Find(id);
-            db.Registracion.Remove(registracion);
-            db.SaveChanges();*/
-            return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
-
-        public Boolean selectedPerfil() {
-            return true;
-
         }
     }
 }

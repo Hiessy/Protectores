@@ -14,30 +14,16 @@ namespace Protectores.Controllers
     {
         private ProtectoresContext db = new ProtectoresContext();
 
-        // GET: /Location/
-        public ActionResult Index()
-        {
-            return View();
-        }
-
-
         // POST: /Location/GetResult
-       
-        public ActionResult GetResults(Coodenadas coords)
+        public ActionResult GetResults(Coordenadas coords)
         {
             var messages = new List<Contacto>();
 
             string query = "select ContactoID,UsuarioID,Latitud,Longitud,AddressNumber,StreetName,CityName,CountryName,Telefono,IsProtector from dbo.FNT_GETDIST (" + coords.Latitud + ", " + coords.Longitud + ")";
             List<Contacto> contactos = db.Contacto.SqlQuery(query).ToList();
-    /*        foreach (Contacto cont in contactos)
-            {
-                cont.Usuario = new Usuario();
-            }*/
             messages.AddRange(contactos);
-
 
             return View(messages);
         }
-	}
+    }
 }
-

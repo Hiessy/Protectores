@@ -1,29 +1,40 @@
 function GeoSucces() {
-    if (navigator.geolocation) {
-        var pos;
-        navigator.geolocation.getCurrentPosition(function (position) {
-            pos = {lat: position.coords.latitude,lng: position.coords.longitude}
-        }, function() {}, {timeout:5000});
 
-        if (pos != null){
-            $('#LatitudId').val(pos['lat']);
-            $('#LongitudId').val(pos['lng']);
+    navigator.geolocation.getCurrentPosition(success, error, options);
+
+    function success(position) {
+        $('#LatitudId').val(position.coords.latitude);
+        $('#LongitudId').val(position.coords.longitude);
+    }
+
+    function error() {
+        console.log('error');
+    }
+
+    function options(position) {
+    }
+    setTimeout(function () {
+        $('#CoordBtnId').click();
+    }, 1500);
+}
+
+function Buscar() {
+    var address = $('#pac-input').val();
+    var geocoder = new google.maps.Geocoder();
+    geocoder.geocode({ 'address': address }, function (results, status) {
+
+        if (status == google.maps.GeocoderStatus.OK) {
+            var lat = results[0].geometry.location.lat();
+            var lng = results[0].geometry.location.lng();
+        }
+
+        if (address != "") {
+            $('#LatitudId').val(lat);
+            $('#LongitudId').val(lng);
         } else {
             $('#LatitudId').val('-34.6036844');
             $('#LongitudId').val('-58.3815591');
-            $('#TelefonoId').val('test');
         }
-
-     $('#CoordBtnId').click();
-
-        // Hardcodeamos dos valores por restricciones de google-api
-
-    }
+        $('#CoordBtnId').click();
+    });
 }
-
-
-
-
-
-   
-	

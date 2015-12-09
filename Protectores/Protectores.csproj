@@ -136,16 +136,13 @@
     <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistracionController.cs" />
-    <Compile Include="DAL\ProtectoredInitializer.cs" />
     <Compile Include="DAL\ProtectoresContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AdopcionAnimal.cs" />
-    <Compile Include="Models\Coodenadas.cs" />
-    <Compile Include="Models\Perfil.cs" />
+    <Compile Include="Models\Coordenadas.cs" />
     <Compile Include="Models\Contacto.cs" />
-    <Compile Include="Models\TipoAyuda.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -161,7 +158,6 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\create.js" />
     <Content Include="Scripts\google-api.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -188,17 +184,10 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Registracion\Create.cshtml" />
-    <Content Include="Views\Registracion\Delete.cshtml" />
-    <Content Include="Views\Registracion\Details.cshtml" />
     <Content Include="Views\Registracion\Edit.cshtml" />
-    <Content Include="Views\Registracion\Index.cshtml" />
     <Content Include="Views\AdopcionAnimal\Create.cshtml" />
-    <Content Include="Views\AdopcionAnimal\Details.cshtml" />
-    <Content Include="Views\AdopcionAnimal\Edit.cshtml" />
     <Content Include="Views\AdopcionAnimal\Index.cshtml" />
     <Content Include="Views\AdopcionAnimal\List.cshtml" />
-    <Content Include="Views\Location\Index.cshtml" />
-    <Content Include="Views\AdopcionAnimal\Delete.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Location\GetResults.cshtml" />
   </ItemGroup>
