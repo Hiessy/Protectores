@@ -18,6 +18,12 @@ namespace Protectores.Controllers
             return View();
         }
 
+        public ActionResult Logout(Usuario u)
+        {
+            HttpContext.Session["Logged"] = false;
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(Usuario u)

@@ -26,27 +26,27 @@ namespace Protectores.Models
         public double Latitud { get; set; }
         public double Longitud { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Por favor, ingrese el número de su dirección")]
         [StringLength(20)]
         [Display(Name = "Número")]
         public string AddressNumber { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Por favor, ingrese la calle de su dirección")]
         [StringLength(50)]
         [Display(Name = "Calle")]
         public string StreetName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Por favor, ingrese la ciudad de su dirección")]
         [StringLength(50)]
         [Display(Name = "Ciudad")]
         public string CityName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Por favor, ingrese el teléfono")]
         [StringLength(50)]
         [Display(Name = "Teléfono")]
         public string Telefono { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Por favor, seleccione el pais de su dirección")]
         [Display(Name = "País")]
         public Country CountryName { get; set; }
 

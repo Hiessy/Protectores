@@ -24,17 +24,23 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    @if (!logged)
-                    {
-                        <li>@Html.ActionLink("Registrarse", "Create", "Registracion")</li>
-                    }
                     @if (logged)
                     {
                         <li>@Html.ActionLink("Adopciones", "Index", "AdopcionAnimal")</li>
                     }
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (!logged)
+                    {
+                        <li>@Html.ActionLink("Registrarse", "Create", "Registracion")</li>
+                    }
                     @if (!logged)
                     {
                         <li>@Html.ActionLink("Login", "Index", "Login")</li>
+                    }
+                    @if (logged)
+                    {
+                        <li>@Html.ActionLink("Logout", "Logout", "Login")</li>
                     }
                 </ul>
             </div>

@@ -15,7 +15,7 @@ function GeoSucces() {
     }
     setTimeout(function () {
         $('#CoordBtnId').click();
-    }, 1500);
+    }, 3000);
 }
 
 function Buscar() {

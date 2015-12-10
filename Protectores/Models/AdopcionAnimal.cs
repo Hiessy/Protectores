@@ -16,12 +16,12 @@ namespace Protectores.Models
         public int UsuarioId { get; set; }
         public virtual Usuario Usuario { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Por favor, ingrese el nombre de la mascota")]
         [StringLength(20)]
         [Display(Name = "Nombre de la mascota")]
         public string nombre { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Por favor, ingrese la especie de la mascota")]
         [StringLength(20)]
         [Display(Name = "Especie")]
         public string especie { get; set; }

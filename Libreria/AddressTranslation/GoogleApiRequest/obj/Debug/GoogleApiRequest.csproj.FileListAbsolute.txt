@@ -33,3 +33,10 @@ C:\proyecto\Protectores-develop\Libreria\AddressTranslation\GoogleApiRequest\bin
 C:\proyecto\Protectores-develop\Libreria\AddressTranslation\GoogleApiRequest\obj\Debug\GoogleApiRequest.csprojResolveAssemblyReference.cache
 C:\proyecto\Protectores-develop\Libreria\AddressTranslation\GoogleApiRequest\obj\Debug\GoogleApiRequest.dll
 C:\proyecto\Protectores-develop\Libreria\AddressTranslation\GoogleApiRequest\obj\Debug\GoogleApiRequest.pdb
+Z:\proyecto\Protectores-develop\Libreria\AddressTranslation\GoogleApiRequest\bin\Debug\GoogleApiRequest.dll
+Z:\proyecto\Protectores-develop\Libreria\AddressTranslation\GoogleApiRequest\bin\Debug\GoogleApiRequest.pdb
+Z:\proyecto\Protectores-develop\Libreria\AddressTranslation\GoogleApiRequest\bin\Debug\GoogleEntities.dll
+Z:\proyecto\Protectores-develop\Libreria\AddressTranslation\GoogleApiRequest\bin\Debug\GoogleEntities.pdb
+Z:\proyecto\Protectores-develop\Libreria\AddressTranslation\GoogleApiRequest\obj\Debug\GoogleApiRequest.csprojResolveAssemblyReference.cache
+Z:\proyecto\Protectores-develop\Libreria\AddressTranslation\GoogleApiRequest\obj\Debug\GoogleApiRequest.dll
+Z:\proyecto\Protectores-develop\Libreria\AddressTranslation\GoogleApiRequest\obj\Debug\GoogleApiRequest.pdb
